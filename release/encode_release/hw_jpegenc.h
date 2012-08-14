@@ -100,6 +100,8 @@ typedef struct
 	int thumbqLvl;
 	RkExifInfo *exifInfo;//if dothumbnail and thumbdata is null and insert all header, this must not be null
 	RkGPSInfo *gpsInfo;//be null when gps is not set, else not be null
+	unsigned char* y_vir_addr;
+	unsigned char* uv_vir_addr;
 }JpegEncInInfo;
 
 typedef struct
