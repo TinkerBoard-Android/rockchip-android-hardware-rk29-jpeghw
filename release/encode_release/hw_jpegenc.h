@@ -1,3 +1,6 @@
+/*
+ * Copyright (C) 2015 Rockchip Electronics Co., Ltd.  
+ */
 #ifdef __cplusplus
 extern "C"
 {

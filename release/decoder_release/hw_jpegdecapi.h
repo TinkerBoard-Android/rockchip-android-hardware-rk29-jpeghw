@@ -1,3 +1,6 @@
+/*
+ * Copyright (C) 2015 Rockchip Electronics Co., Ltd.
+ */
 #ifndef HW_JPEGDECAPI_H
 #define HW_JPEGDECAPI_H
 
