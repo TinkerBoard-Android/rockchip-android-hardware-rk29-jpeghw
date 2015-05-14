@@ -51,9 +51,7 @@ extern "C"
 #define DWL_CLIENT_TYPE_PP               4U
 #define DWL_CLIENT_TYPE_VC1_DEC          5U
 #define DWL_CLIENT_TYPE_MPEG2_DEC        6U
-#define DWL_CLIENT_TYPE_VP6_DEC          7U
 #define DWL_CLIENT_TYPE_AVS_DEC          9U /* TODO: fix */
-#define DWL_CLIENT_TYPE_RV_DEC           8U
 #define DWL_CLIENT_TYPE_VP8_DEC          10U
 
     /* Linear memory area descriptor */
@@ -84,14 +82,14 @@ extern "C"
         RK_U32 mpeg2Support;    /* HW supports MPEG-2 */
         RK_U32 ppSupport;       /* HW supports post-processor */
         RK_U32 ppConfig;        /* HW post-processor functions bitmask */
-        RK_U32 sorensonSparkSupport;   /* HW supports Sorenson Spark */
+        RK_U32 resv3Support;
         RK_U32 refBufSupport;   /* HW supports reference picture buffering */
-        RK_U32 vp6Support;      /* HW supports VP6 */
+        RK_U32 resv2Support;
         RK_U32 vp7Support;      /* HW supports VP7 */
         RK_U32 vp8Support;      /* HW supports VP8 */
         RK_U32 avsSupport;      /* HW supports AVS */
         RK_U32 jpegESupport;    /* HW supports JPEG extensions */
-        RK_U32 rvSupport;       /* HW supports REAL */
+        RK_U32 resv0Support;
         RK_U32 mvcSupport;      /* HW supports H264 MVC extension */
     } DWLHwConfig_t;
 
@@ -100,11 +98,11 @@ extern "C"
         RK_U32 h264SupportFuse;     /* HW supports h.264 */
         RK_U32 mpeg4SupportFuse;    /* HW supports MPEG-4 */
         RK_U32 mpeg2SupportFuse;    /* HW supports MPEG-2 */
-        RK_U32 sorensonSparkSupportFuse;   /* HW supports Sorenson Spark */
+        RK_U32 resv3SupportFuse;
 		RK_U32 jpegSupportFuse;     /* HW supports JPEG */
-        RK_U32 vp6SupportFuse;      /* HW supports VP6 */
-        RK_U32 vp7SupportFuse;      /* HW supports VP6 */
-        RK_U32 vp8SupportFuse;      /* HW supports VP6 */
+        RK_U32 resv2SupportFuse;
+        RK_U32 vp7SupportFuse;      /* HW supports VP7 */
+        RK_U32 vp8SupportFuse;      /* HW supports VP8 */
         RK_U32 vc1SupportFuse;      /* HW supports VC-1 Simple */
 		RK_U32 jpegProgSupportFuse; /* HW supports Progressive JPEG */
         RK_U32 ppSupportFuse;       /* HW supports post-processor */
@@ -113,7 +111,7 @@ extern "C"
         RK_U32 maxPpOutPicWidthFuse; /* Maximum output width of Post-Processor */
         RK_U32 refBufSupportFuse;   /* HW supports reference picture buffering */
 		RK_U32 avsSupportFuse;      /* one of the AVS values defined above */
-		RK_U32 rvSupportFuse;       /* one of the REAL values defined above */
+		RK_U32 resv0SupportFuse;
 		RK_U32 mvcSupportFuse;
         RK_U32 customMpeg4SupportFuse; /* Fuse for custom MPEG-4 */
 

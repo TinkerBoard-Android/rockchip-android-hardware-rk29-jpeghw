@@ -53,10 +53,6 @@
 #define PP_SCALING                      (RK_U32)(0x0C000000)
 #define PP_DEINTERLACING                (RK_U32)(0x02000000)
 #define PP_ALPHA_BLENDING               (RK_U32)(0x01000000)
-#define SORENSON_SPARK_NOT_SUPPORTED    (RK_U32)(0x00)
-#define SORENSON_SPARK_SUPPORTED        (RK_U32)(0x01)
-#define VP6_NOT_SUPPORTED               (RK_U32)(0x00)
-#define VP6_SUPPORTED                   (RK_U32)(0x01)
 #define VP7_NOT_SUPPORTED               (RK_U32)(0x00)
 #define VP7_SUPPORTED                   (RK_U32)(0x01)
 #define VP8_NOT_SUPPORTED               (RK_U32)(0x00)
@@ -69,8 +65,6 @@
 #define AVS_SUPPORTED                   (RK_U32)(0x01)
 #define JPEG_EXT_NOT_SUPPORTED          (RK_U32)(0x00)
 #define JPEG_EXT_SUPPORTED              (RK_U32)(0x01)
-#define RV_NOT_SUPPORTED                (RK_U32)(0x00)
-#define RV_SUPPORTED                    (RK_U32)(0x01)
 #define MVC_NOT_SUPPORTED               (RK_U32)(0x00)
 #define MVC_SUPPORTED                   (RK_U32)(0x01)
 
@@ -80,12 +74,8 @@
 #define MPEG4_FUSE_ENABLED						 (RK_U32)(0x01)
 #define MPEG2_NOT_SUPPORTED_FUSE				 (RK_U32)(0x00)
 #define MPEG2_FUSE_ENABLED						 (RK_U32)(0x01)
-#define SORENSON_SPARK_NOT_SUPPORTED_FUSE		 (RK_U32)(0x00)
-#define SORENSON_SPARK_ENABLED					 (RK_U32)(0x01)
 #define JPEG_NOT_SUPPORTED_FUSE					 (RK_U32)(0x00)
 #define JPEG_FUSE_ENABLED						 (RK_U32)(0x01)
-#define VP6_NOT_SUPPORTED_FUSE					 (RK_U32)(0x00)
-#define VP6_FUSE_ENABLED						 (RK_U32)(0x01)
 #define VP7_NOT_SUPPORTED_FUSE					 (RK_U32)(0x00)
 #define VP7_FUSE_ENABLED						 (RK_U32)(0x01)
 #define VP8_NOT_SUPPORTED_FUSE					 (RK_U32)(0x00)
@@ -125,13 +115,13 @@
     decHwCfg.vc1Support = dwlHwCfg.vc1Support; \
     decHwCfg.ppSupport = dwlHwCfg.ppSupport; \
     decHwCfg.ppConfig = dwlHwCfg.ppConfig; \
-    decHwCfg.sorensonSparkSupport = dwlHwCfg.sorensonSparkSupport; \
-    decHwCfg.vp6Support = dwlHwCfg.vp6Support; \
+    decHwCfg.resv3Support = dwlHwCfg.resv3Support; \
+    decHwCfg.resv2Support = dwlHwCfg.resv2Support; \
     decHwCfg.vp7Support = dwlHwCfg.vp7Support; \
     decHwCfg.vp8Support = dwlHwCfg.vp8Support; \
     decHwCfg.refBufSupport = dwlHwCfg.refBufSupport; \
     decHwCfg.avsSupport = dwlHwCfg.avsSupport; \
-    decHwCfg.rvSupport = dwlHwCfg.rvSupport; \
+    decHwCfg.resv0Support = dwlHwCfg.resv0Support; \
     decHwCfg.customMpeg4Support = dwlHwCfg.customMpeg4Support; \
     decHwCfg.mvcSupport = dwlHwCfg.mvcSupport;
 
@@ -148,14 +138,14 @@ typedef struct DecHwConfig_
     RK_U32 ppSupport;           /* PP_SUPPORTED or PP_NOT_SUPPORTED */
     RK_U32 ppConfig;            /* Bitwise list of PP function */
     RK_U32 maxPpOutPicWidth;    /* maximum post-processor output picture width */
-    RK_U32 sorensonSparkSupport;   /* one of the SORENSON_SPARK values defined above */
+    RK_U32 resv3Support;
     RK_U32 refBufSupport;       /* one of the REF_BUF values defined above */
-    RK_U32 vp6Support;          /* one of the VP6 values defined above */
+    RK_U32 resv2Support;
     RK_U32 vp7Support;          /* one of the VP7 values defined above */
     RK_U32 vp8Support;          /* one of the VP8 values defined above */
     RK_U32 avsSupport;          /* one of the AVS values defined above */
     RK_U32 jpegESupport;        /* one of the JPEG EXT values defined above */    
-    RK_U32 rvSupport;           /* one of the HUKKA values defined above */
+    RK_U32 resv0Support;
     RK_U32 mvcSupport;          /* one of the MVC values defined above */
 } DecHwConfig;
 
