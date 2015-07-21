@@ -120,9 +120,9 @@ typedef struct
 	int finalOffset;//out invalid data offset to outBufAddr above
 	int outBuflen;//1024 + thumbnail length + init jpeg length + thumbnaillength(tmp buf)
 	int jpegFileLen;
-	int (*cacheflush)(int buf_type, int offset, int len);
 	int JpegHeaderLen;
 	int ThumbFileLen;
+	int (*cacheflush)(int buf_type, int offset, int len);
 }JpegEncOutInfo;
 
 extern int hw_jpeg_encode(JpegEncInInfo *inInfo, JpegEncOutInfo *outInfo);
